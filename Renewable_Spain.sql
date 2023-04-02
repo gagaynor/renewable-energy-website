@@ -1,5 +1,5 @@
--- had issues in Juypter so I made the tables with this script
--- Gabriel Gaynor
+
+-- START Gabriel Gaynor BLOCK
 
 CREATE TABLE time_stamps (
 	row int PRIMARY KEY,
@@ -34,3 +34,5 @@ FROM
 	energy_dataset;
 	
 SELECT * FROM load LIMIT 5;
+
+-- END Gabriel Gaynor Block
