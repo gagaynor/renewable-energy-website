@@ -36,3 +36,27 @@ FROM
 SELECT * FROM load LIMIT 5;
 
 -- END Gabriel Gaynor Block
+
+
+-- START Miguel Grella BLOCK
+-- Please see `miguel_grella_insert_table.ipynb` for the code used to generate the data for fossil_fuel_generation table
+
+-- Example of query using fossil_fuel_generation table
+SELECT
+   strftime('%Y', time) AS year, SUM(GEN_OIL), SUM(GEN_GAS)
+   FROM fossil_fuel_generation GROUP BY year;
+
+
+-- Example of query using fossil_fuel_generation and load table
+
+WITH daily_load AS (
+SELECT strftime('%Y-%m-%d', time) AS time, AVG(forcasted_load) AS forcasted_load
+FROM load
+GROUP BY time
+)
+
+SELECT fg.TIME, GEN_GAS, GEN_OIL, daily_load.forcasted_load as LOAD
+FROM fossil_fuel_generation fg
+INNER JOIN daily_load ON fg.TIME = daily_load.time
+
+-- END Miguel Grella  Block
