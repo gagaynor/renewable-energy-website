@@ -16,8 +16,8 @@ FROM
  ;
    
 CREATE TABLE load (
-    row_key int,
-    time text PRIMARY KEY,
+    row_key int PRIMARY KEY,
+    time text,
     forcasted_load int,
     actual_load int
     )
