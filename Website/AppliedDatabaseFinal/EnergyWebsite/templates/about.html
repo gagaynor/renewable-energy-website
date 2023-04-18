@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About</title>
+    <!-- Include CSS styles for tabs and button -->
+    <style>
+        /* Styles for tabs */
+        .tab {
+            display: inline-block;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+        .tab:hover {
+            background-color: lightgray;
+        }
+        .active {
+            background-color: gray;
+            color: white;
+        }
+        /* Styles for settings/admin button */
+        .settings-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+        .settings-button:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <!-- Tab navigation -->
+    <div>
+        <a href="{% url 'home' %}" class="tab">Home</a>
+        <a href="{% url 'about' %}" class="tab">About</a>
+        <!-- Add additional tabs as needed -->
+    </div>
+<head>
+  <title>Energy Generation Impact on Actual Load</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Include any CSS styles here -->
+</head>
+<body>
+  <h1>About Our Site</h1>
+  <p>Welcome to our Django application! This project was developed using Django, a Python web framework. This site was created to help users explore energy generation types and how much they contribute to meeting the actual load of this Spanish electric system.</p>
+
+  <h2>References Used</h2>
+  <ul>
+    <li><a href="https://www.kaggle.com/datasets/nicholasjhana/energy-consumption-generation-prices-and-weather">Spain Energy Load and Generation Data Source on Kaggle</a></li>
+    <li><a href="https://www.djangoproject.com/">Django Official Website</a></li>
+    <li><a href="https://docs.djangoproject.com/en/stable/">Django Documentation</a></li>
+    <li><a href="https://www.python.org/">Python Official Website</a></li>
+    <li><a href="https://github.com/">GitHub</a></li>
+  </ul>
+
+  <h2>About the Developers</h2>
+  <p>This site was created by Gabriel Gaynor, Miguel Grella, and Greg Spina. It was developed as a final project for our Applied Database class at Indiana University.</p>
+
+  <footer>
+    <p>© 2023 Gabriel Gaynor. All rights reserved.</p>
+  </footer>
+</body>
+</html>
