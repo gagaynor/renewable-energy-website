@@ -1,3 +1,4 @@
+{% load static %} 
 <!DOCTYPE html>
 <html>
   <head>
@@ -39,7 +40,8 @@
     </div>
 <head>
   <title>Energy Generation Impact on Actual Load</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Include any CSS styles here -->
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  {% comment %} <link rel="stylesheet" href="styles.css"> <!-- Include any CSS styles here --> {% endcomment %}
 </head>
 <body>
   <h1>About Our Site</h1>
