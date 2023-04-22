@@ -50,7 +50,7 @@ class FossilFuelGeneration(models.Model):
 
 class Load(models.Model):
     row_key = models.IntegerField(blank=True, null=True)
-    time = models.TextField(primary_key=True, blank=True, null=True)
+    time = models.TextField(primary_key=True, blank=True, null=False)
     forcasted_load = models.IntegerField(blank=True, null=True)
     actual_load = models.IntegerField(blank=True, null=True)
 
@@ -60,7 +60,7 @@ class Load(models.Model):
 
 
 class TimeStamps(models.Model):
-    row = models.AutoField(primary_key=True, blank=True, null=True)
+    row = models.AutoField(primary_key=True, blank=True, null=False)
     time = models.TextField(blank=True, null=True)
 
     class Meta:
