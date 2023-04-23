@@ -26,7 +26,9 @@ def about(request):
         'filters': filters
     }
 
-    return render(request, 'about.html', context)
+    response = matplotlib_graph(request)
+
+    return render(request, 'about.html', context, response)
 
 
 def datetime_transform(df):
@@ -47,7 +49,7 @@ def plot_data(start_date, end_date, time_freq, column):
     
 def matplotlib_graph(request):
     # Generate the graph using Matplotlib
-    energy_query = Energy.objects.all()
+    energy_query = EnergyDataset.objects.all()
     energy_df = pd.DataFrame.from_records(energy_query.values())
     graph_df = datetime_transform(energy_df)
     filter_form = Filters(request.POST or None)
