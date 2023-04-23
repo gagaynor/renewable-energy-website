@@ -38,7 +38,7 @@ def datetime_transform(df):
     df = df.set_index('time', drop=True)
     return df
 
-def plot_data(start_date, end_date, time_freq, column):
+def plot_data(plot_df,start_date, end_date, time_freq, column):
     #filter dataframe to only show data between the start and end date
     df_filtered = plot_df.loc[start_date:end_date]
     
@@ -60,7 +60,7 @@ def matplotlib_graph(request):
         time_freq = request.POST.get('time_frequency')
         column = request.POST.get('load')
 
-        plot_data(graph_df)
+        plot_data(graph_df,start_date,end_date,time_freq,column)
 
     else:
             messages.warning(request, "No data selected")
