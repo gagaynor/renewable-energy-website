@@ -16,14 +16,14 @@ def home(request):
     """
     View for the home page of the Django application.
     """
-    filters = Filters(request.POST or None)
-    context = {
-        'filters': filters
-    }
+    # filters = Filters(request.POST or None)
+    # context = {
+    #     'filters': filters
+    # }
 
-    response = matplotlib_graph(request)
+    # response = matplotlib_graph(request)
 
-    return render(request, 'home.html', context, response)
+    return render(request, 'home.html')#, context, response)
 
 def about(request):
     """
