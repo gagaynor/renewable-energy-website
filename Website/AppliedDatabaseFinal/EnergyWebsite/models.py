@@ -1,7 +1,7 @@
 from django.db import models
 
 class EnergyDataset(models.Model):
-    time = models.TextField(blank=True, null=True)
+    time = models.TextField(primary_key=True, blank=True, null=False)
     generation_biomass = models.FloatField(db_column='generation biomass', blank=True, null=True)  
     generation_fossil_brown_coal_lignite = models.FloatField(db_column='generation fossil brown coal/lignite', blank=True, null=True)  
     generation_fossil_coal_derived_gas = models.FloatField(db_column='generation fossil coal-derived gas', blank=True, null=True)  

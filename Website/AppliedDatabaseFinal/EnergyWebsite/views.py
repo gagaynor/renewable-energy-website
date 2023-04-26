@@ -9,17 +9,12 @@ import io
 import base64
 from django.template import loader
 from django.contrib import messages
+from django.db import connections
+from django.utils import timezone
 
 def home(request):
     """
     View for the home page of the Django application.
-    """
-
-    return render(request, 'home.html')
-
-def about(request):
-    """
-    View for the about page of the Django application.
     """
     filters = Filters(request.POST or None)
     context = {
@@ -28,7 +23,13 @@ def about(request):
 
     response = matplotlib_graph(request)
 
-    return render(request, 'about.html', context, response)
+    return render(request, 'home.html', context, response)
+
+def about(request):
+    """
+    View for the about page of the Django application.
+    """
+    return render(request, 'about.html')
 
 
 def datetime_transform(df):
@@ -40,16 +41,18 @@ def datetime_transform(df):
 
 def plot_data(plot_df,start_date, end_date, time_freq, column):
     #filter dataframe to only show data between the start and end date
-    df_filtered = plot_df.loc[start_date:end_date]
+    start_date = timezone.make_aware(start_date.time, timezone.utc)
+    end_date = timezone.make_aware(end_date.time, timezone.utc)
+    df_filtered = plot_df.loc[start_date.time:end_date.time]
     
     #plot the data
     df_filtered[column].resample(time_freq).mean().plot()
     plt.title(column)
 
-    
+
 def matplotlib_graph(request):
     # Generate the graph using Matplotlib
-    energy_query = EnergyDataset.objects.all()
+    energy_query = EnergyDataset.objects.all().using('renewables')
     energy_df = pd.DataFrame.from_records(energy_query.values())
     graph_df = datetime_transform(energy_df)
     filter_form = Filters(request.POST or None)
@@ -63,7 +66,16 @@ def matplotlib_graph(request):
         plot_data(graph_df,start_date,end_date,time_freq,column)
 
     else:
-            messages.warning(request, "No data selected")
+        cursor = connections['renewables'].cursor()
+        cursor.execute('SELECT time  FROM energy_dataset LIMIT 1')
+        time_data = cursor.fetchall()
+        start_date = EnergyDataset.objects.using('renewables').order_by('time').first()
+        end_date = EnergyDataset.objects.using('renewables').latest('time')
+        time_freq = '#3'
+        column = 'Total Load Actual'
+
+        plot_data(graph_df,start_date,end_date,time_freq,column)
+            # messages.warning(request, "No data selected")
 
     # Save the graph to a buffer
     buf = io.BytesIO()
