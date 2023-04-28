@@ -1,4 +1,5 @@
 from django import forms
+   
 
 TIME_FREQ = (
     ('#1', '1H'),

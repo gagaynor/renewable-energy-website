@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Graph Filters</h1>
+    <form method="POST" action="{% url 'graph_view' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Generate Graph</button>
+    </form>
+{% endblock %}

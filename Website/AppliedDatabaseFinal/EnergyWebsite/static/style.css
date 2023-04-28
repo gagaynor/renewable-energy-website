@@ -1,0 +1,170 @@
+/*
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*/
+
+/* LOGIN PAGE STYLES */ 
+
+body {
+    background-image: url("https://iea.imgix.net/9036bfae-e07d-4770-aa0b-961fe98c97dc/GettyImages-505412046.jpg?auto=compress%2Cformat&fit=min&q=80&rect=0%2C0%2C3600%2C2400&w=1280&fit=crop&fm=jpg&q=70&auto=format&h=853"); /* The image used */
+    background-color: lightskyblue; /* Used if the image is unavailable */
+    /* background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+  
+  /* Header section */
+  h1 {
+      color: black;
+      text-align: center;
+      font-family: Calibri Light;
+      font-size: 50px;
+  
+    }
+  
+    /* Credentials section */
+    .container {
+      font-family: Calibri;
+      text-align: center;
+      font-size: 40px;
+    }
+  
+  
+  
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+    }
+  
+    .gray_large {
+      color: gray;
+    }
+  
+    .white_bold_sm {
+      color: white;
+      font-size: 150%;
+      font-weight: bold;
+    }
+  
+    .black_bold_sm {
+      color: black;
+      font-size: 150%;
+      font-weight: bold;
+    }
+  
+  
+   /* 
+    </style>
+    </head>
+    <body>
+    
+      <h1>Renewable Energy Analysis Website</h1>
+      <p class="container center gray_large">Login</p>
+      <p class="container white_bold_sm">Username</p>
+      <p class="container white_bold_sm">Password</p>
+    
+    </style>
+    </head>
+    <body>
+    
+    </html>
+  */
+  
+  /**********************************************************************************************************************************/ 
+  /* CHART PAGE STYLES */ 
+  
+  /*
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <style>
+  */ 
+  
+  .container-fluid {
+    padding: 20px;
+    font-family: Calibri;
+    text-align: center;
+  
+  }
+  
+  .chart-background {
+    background: #f2f6ff
+  }
+  
+  .start-button-rounded {
+    font-family: Graphik,Arial,sans-serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 16px;
+    transition: background .25s;
+    border: 1px solid #e6e6e6;
+    border-radius: 20px;
+    outline: 0;
+    background: #fff;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    box-sizing: border-box;
+    appearance: none
+  }
+  
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /*
+    </style>
+      <!-- Tab links -->
+      <div class="tab">
+        <button class="tablinks" >Home</button>
+        <button class="tablinks" >About</button>
+      </div>
+    
+    <body class = "chart-background">
+   
+      <p class = "container-fluid">Date Range Entry</p>
+      
+      <p class = "container-fluid">Dropdown Menu</p>
+      
+      <p class = "start-button-rounded">Start</p>
+      
+    
+    </style>
+    </head>
+    */
